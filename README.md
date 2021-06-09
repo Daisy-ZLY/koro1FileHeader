@@ -2,6 +2,8 @@
 
 > 在vscode中用于生成文件头部注释和函数注释的插件，经过多版迭代后，插件：支持所有主流语言,灵活方便，文档齐全，食用简单！觉得插件不错的话，就给个[Star](https://github.com/OBKoro1/koro1FileHeader)⭐️吧~
 
+> fork koroFileHeader代码，并根据需求增加默认情况下获取hostname作为用户名称
+
 ### 使用效果：
 
 **头部注释和注释图案**

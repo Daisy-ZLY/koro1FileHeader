@@ -1,8 +1,8 @@
 /*
  * Author       : OBKoro1
  * Date         : 2020-06-01 11:10:04
- * @LastEditors  : OBKoro1
- * @LastEditTime : 2021-05-18 14:58:08
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-06-09 17:11:47
  * @FilePath     : /koro1FileHeader/src/logic/logic.js
  * Description  : 逻辑输出
  * https://github.com/OBKoro1
@@ -13,6 +13,7 @@ const fs = require('fs')
 const filePathFile = require('./filePath')
 const logicUtil = require('../utile/logicUtil')
 const global = require('../utile/CONST')
+const os = require('os')
 
 /**
  * @description: 头部注释根据用户设置返回模板数据对象
@@ -116,6 +117,8 @@ function noEditorValue (data, config) {
   if (data.FilePath !== undefined) {
     data.FilePath = filePathFile.createFilePath(data.FilePath)
   }
+  // 自动添加本机hostname作为作者默认值
+  if (!data.Author) data.Author = os.hostname()
   return data
 }
 

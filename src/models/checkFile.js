@@ -1,8 +1,8 @@
 /*
  * Author       : OBKoro1
  * Date         : 2020-02-05 16:09:11
- * LastEditors  : OBKoro1
- * LastEditTime : 2020-12-25 16:44:22
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-06-09 17:12:02
  * FilePath     : \koro1FileHeader\src\models\checkFile.js
  * Description  : 检测文件的一些逻辑
  * https://github.com/OBKoro1
@@ -11,6 +11,7 @@
 const languageOutput = require('../languageOutPut/languageOutput')
 const CONST = require('../utile/CONST')
 const filePathLogic = require('../logic/filePath')
+const os = require('os')
 
 /**
  * @description: 保存时触发修改 替换最后编辑时间 最后修改时间 文件路径
@@ -77,7 +78,7 @@ function saveReplaceTime (document, config, fileEnd) {
         // 表示是修改人
         hasAnnotation = true
         authorRange = range
-        const LastEditors = userObj.LastEditors || 'Please set LastEditors'
+        const LastEditors = userObj.LastEditors || os.hostname()
         authorText = changeFont.LastEditorsStr(LastEditors)
       } else if (checkHasAnnotation('LastEditTime', line, lastTimeRange)) {
         // 最后修改时间
